@@ -8,9 +8,9 @@ const timestring = require('./timestring/index')
 const ChineseNumber = require('chinese-numbers-converter');
 let toNumber = require("english2number");
 let pinyin = require('js-pinyin');
-pinyin.setOptions({ checkPolyphone: false, charCase: 0 });
+pinyin.setOptions({ checkPolyphone: false, charCase: 1 });
 
-const ENGLISH_NUMBER_REGEX = /(((?<=\s|^)(zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety|hundred|thousand|million|billion|trillion|quadrillion|quintillion|sextillion|septillion|octillion|onillion|decillion)|(?<=zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety|hundred|thousand|million|billion|trillion|quadrillion|quintillion|sextillion|septillion|octillion|onillion|decillion)(\s|-))+)/gi;
+const ENGLISH_NUMBER_REGEX = /(((?<=\s|^)(zero|one|ten|hundred|thousand|million|billion|trillion|quadrillion|quintillion|sextillion|septillion|octillion|onillion|decillion|twenty|twelve|two|three|thirteen|thirty|fourteen|fourty|four|fifteen|fifty|five|sixty|sixteen|six|seventeen|seventy|seven|eighty|eighteen|eight|ninety|nineteen|nine)|((?<=zero|one|ten|hundred|thousand|million|billion|trillion|quadrillion|quintillion|sextillion|septillion|octillion|onillion|decillion|twenty|twelve|two|three|thirteen|thirty|fourteen|fourty|four|fifteen|fifty|five|sixty|sixteen|six|seventeen|seventy|seven|eighty|eighteen|eight|ninety|nineteen|nine)(\s{0,}|-|s)))+)/gi;
 const POSITIVE_ARABIC_NUMBER_REGEX = /^\d+(\.\d+)?$/; //non-negative floats & integers
 const NEGATIVE_ARABIC_NUMBER_REGEX = /^(-(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*)))$/; //negative floats
 
@@ -31,16 +31,20 @@ function englishConverter(str) {
         return str;
     } else {
         try {
-            str = str.replace(/-/gi, ' ').replace(/and/gi, '');//delete '-' and unnecessary 'and's
-            return str.replace(
+            let replaced = str.replace(/-/gi, ' ').replace(/s(?=\s)/gi, '').replace(/(?<=\s|^)(and|&)(?=\s|$)/gi, ' ').replace(/(?<=\s|^)(an|a)(?=\s|$)/gi, ' one ');//delete unnecessary things
+            return replaced.replace(
                 ENGLISH_NUMBER_REGEX,
                 match => {
-                    return toNumber(match.replace(/[,\s|s](?=$)/i, ''));//delete blanks and unnecessary 's's in the end
+                    try {
+                        return toNumber(match.replace(/[,\ss]{0,}(?=$)/gi, ''));//delete blanks and unnecessary 's's in the end
+                    }
+                    catch {
+                        return match;
+                    }
                 }
             );//find and replace and the english numbers
         }
-        catch (e) {
-            console.log(e);
+        catch {
             return str;
         }
     }
