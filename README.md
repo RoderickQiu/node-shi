@@ -1,4 +1,4 @@
-# node-shi
+# node-shi（时）
 
 It's a lib which let you to transfer human time to computer-readable time and also to transfer computer-generated time to human time, available for English and Chinese.
 
@@ -12,7 +12,19 @@ It's a lib which let you to transfer human time to computer-readable time and al
 - Arabic number + English unix -> time in Arabic number as seconds
 - English number + Chinese unix -> time in Arabic number as seconds
 - English number + English unix -> time in Arabic number as seconds
+
+### Time in Arabic number -> Human time
+
+- *To be developed...*
+
+### Time unix translate
+
 - Arabic number in different unixs *(h/min/s/ms)* -> time in Arabic number as seconds
+- *To be developed...*
+
+### Time stamp translate
+
+- *To be developed...*
 
 ## Packages Using
 
