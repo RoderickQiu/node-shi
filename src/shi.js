@@ -66,9 +66,9 @@ function unitConverter(str, treatNumberAs) {
 }
 
 /**
- * human time parsed to Arabic number in seconds.
+ * human time (中文/English) parsed to Arabic number in seconds.
  * @param {*} str The string or the time in different unixes.
- * @param {String} treatNumberAs (optional) h, min, s, ms
+ * @param {String} treatNumberAs (optional, only used when the input is an integer) available values: h, min, s, ms
  * @returns {Number} The converted number
  */
 function humanTimeParser(str, treatNumberAs) {

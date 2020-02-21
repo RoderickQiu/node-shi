@@ -1,6 +1,6 @@
 {
   "name": "node-shi",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "main": "index.js",
   "scripts": {
     "test": "node test.js"
@@ -10,7 +10,7 @@
     "english2number": "^1.0.8",
     "js-pinyin": "^0.1.9"
   },
-  "description": "It's a lib which let you to transfer human time to computer-readable time and also to transfer computer-generated time to human time, available for English and Chinese.",
+  "description": "It's a lib which let you to transfer human time to computer-readable time and also to transfer computer-generated time to human time, available for English and Chinese words.",
   "author": {
     "name": "Roderick Qiu",
     "email": "scrisqiu@hotmail.com",

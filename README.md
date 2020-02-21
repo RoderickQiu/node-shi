@@ -22,9 +22,9 @@ It's a lib which let you to transfer human time to computer-readable time and al
 - Arabic number in different unixs *(h/min/s/ms)* -> time in Arabic number as seconds
 - *To be developed...*
 
-### Time stamp translate
+## Future of this project
 
-- *To be developed...*
+For the future of node-shi, go to the [todo-list](https://github.com/RoderickQiu/node-shi/projects/1).
 
 ## Packages Using
 
