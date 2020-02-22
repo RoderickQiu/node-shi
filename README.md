@@ -15,12 +15,11 @@ It's a lib which let you to transfer human time to computer-readable time and al
 
 ### Time in Arabic number -> Human time
 
-- *To be developed...*
+- Time with units `d, h, m, s, ms` to human time in languages including: `'ar', 'bg', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'et', 'fa', 'fi', 'fo', 'fr', 'hr', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'lo', 'lt', 'lv', 'ms', 'nl', 'no', 'pl', 'pt', 'ro', 'ru', 'uk', 'ur', 'sk', 'sv', 'tr', 'th', 'vi', 'zh_CN', 'zh_TW'`.
 
 ### Time unix translate
 
-- Arabic number in different unixs *(h/min/s/ms)* -> time in Arabic number as seconds
-- *To be developed...*
+- Arabic number in different unixs *(h/min/s/ms)* -> time in Arabic number as *(h/min/s/ms)*
 
 ## Future of this project
 

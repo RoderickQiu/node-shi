@@ -14,6 +14,14 @@
             "type": "shell",
             "command": "yarn autoclean --force",
             "group": "none"
+        },
+        {
+            "label": "publish",
+            "type": "shell",
+            "command": [
+                "npm publish --access=public"
+            ],
+            "problemMatcher": []
         }
     ]
 }
