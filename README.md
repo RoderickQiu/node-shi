@@ -32,3 +32,4 @@ For the future of node-shi, go to the [todo-list](https://github.com/RoderickQiu
 - timestring, mike182uk, MIT License.
 - chinese-numbers-converter, anton-bot, MIT License.
 - english2number, TSavo, MIT License.
+- HumanizeDuration.js, EvanHahn, Unlicense.

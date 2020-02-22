@@ -14,6 +14,11 @@ english2number@^1.0.8:
   resolved "https://registry.npm.taobao.org/english2number/download/english2number-1.0.8.tgz#7b83974bea539746b39ca831137c9feaf595c488"
   integrity sha1-e4OXS+pTl0aznKgxE3yf6vWVxIg=
 
+humanize-duration@^3.21.0:
+  version "3.21.0"
+  resolved "https://registry.npm.taobao.org/humanize-duration/download/humanize-duration-3.21.0.tgz#ae5dc7e67640770cbf6a8d03a5d1138d47c7ce38"
+  integrity sha1-rl3H5nZAdwy/ao0DpdETjUfHzjg=
+
 js-pinyin@^0.1.9:
   version "0.1.9"
   resolved "https://registry.npm.taobao.org/js-pinyin/download/js-pinyin-0.1.9.tgz#cdf19335645ddb20d4630df1058aac25d256adfd"
