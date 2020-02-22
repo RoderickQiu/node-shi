@@ -2,6 +2,30 @@
 
 It's a lib which let you to transfer human time to computer-readable time and also to transfer computer-generated time to human time, available for English and Chinese.
 
+## How to use
+
+```javascript
+var shi = require('node-shi');
+
+// human time -> time in Arabic number as seconds
+shi.humanTimeParser("five hundreds and twenty one seconds")//521
+shi.humanTimeParser("a day and 一 hour, 52 min 16sec")//93136
+shi.humanTimeParser("三十三分钟", { to: "m" })//33
+shi.setDefault({ as: 'm' }//set default
+shi.humanTimeParser("50", { to: 'h' }))//0.8333333333333334
+shi.humanTimeParser("50", { as: 'h', to: 'm' }))//3000
+shi.clearDefault(//clear defaults
+
+// unit convert
+shi.unitConverter(60, 'm', 'h')//1
+shi.unitConverter(1, "d", "ms")//86400000
+
+// time in Arabic number -> human time
+shi.ArabicNumberTimeParser(1500)//25 minutes
+shi.ArabicNumberTimeParser(36, { lang: 'fr', to: 'h' })//0,01 heure
+shi.ArabicNumberTimeParser(1, { lang: 'zh_CN', as: 'h', to: 'ms' })//3600000 毫秒
+```
+
 ## Features
 
 ### Human time -> time in Arabic number
@@ -19,7 +43,7 @@ It's a lib which let you to transfer human time to computer-readable time and al
 
 ### Time unix translate
 
-- Arabic number in different unixs *(h/min/s/ms)* -> time in Arabic number as *(h/min/s/ms)*
+- Arabic number in different unixs `d, h, m, s, ms` -> time in Arabic number as `d, h, m, s, ms`
 
 ## Future of this project
 

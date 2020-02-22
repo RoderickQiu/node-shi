@@ -7,19 +7,23 @@
             "label": "install",
             "type": "shell",
             "command": "yarn",
-            "group": "none"
+            "group": "none",
+            "problemMatcher": []
         },
         {
             "label": "autoclean",
             "type": "shell",
             "command": "yarn autoclean --force",
-            "group": "none"
+            "group": "none",
+            "problemMatcher": []
         },
         {
-            "label": "publish",
+            "label": "publish (registry settings covered)",
             "type": "shell",
             "command": [
-                "npm publish --access=public"
+                "npm config set registry https://registry.npmjs.org/",
+                "npm publish --access=public",
+                "npm config set registry https://registry.npm.taobao.org"
             ],
             "problemMatcher": []
         }
