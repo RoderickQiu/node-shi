@@ -106,7 +106,7 @@ function unitPreConverter(str, as) {
             return str * 86400;
         case "h":
             return str * 3600;
-        case "m":
+        case "m" || "min":
             return str * 60;
         case "s":
             return str;
@@ -124,7 +124,7 @@ function unitConverterAfter(str, to) {
             return str / 86400;
         case "h":
             return str / 3600;
-        case "m":
+        case "m" || "min":
             return str / 60;
         case "s":
             return str;
@@ -190,7 +190,7 @@ exports.humanTimeParser = humanTimeParser;
  *'ru', 'uk', 'ur', 'sk',    'sv',
  *'tr', 'th', 'vi', 'zh_CN', 'zh_TW'
  * @param {Number} number the time in Arabic number (If `as` is not defined in `option`, we'll parse the number as second in default.)
- * @param {Object} option (optional) *{ lang: language, as: (d, h, m, s, ms), to: (d, h, m, s, ms) }*
+ * @param {Object} option (optional) *{ lang: language, round: boolean (round the decimal or not), as: (d, h, m, s, ms), to: (d, h, m, s, ms) }*
  */
 function ArabicNumberTimeParser(number, option) {
     try {
@@ -203,16 +203,19 @@ function ArabicNumberTimeParser(number, option) {
             if (option.to) result = humanizeDuration(result, {
                 units: [option.to],
                 language: option.lang,
-                fallbacks: ['en']
+                fallbacks: ['en'],
+                round: option.round ? option.round : false
             });
             else if (DEFAULT_TO) result = humanizeDuration(result, {
                 units: [DEFAULT_TO],
                 language: option.lang,
-                fallbacks: ['en']
+                fallbacks: ['en'],
+                round: option.round ? option.round : false
             });
             else result = humanizeDuration(result, {
                 language: option.lang,
-                fallbacks: ['en']
+                fallbacks: ['en'],
+                round: option.round ? option.round : false
             });
         } else if (DEFAULT_TO) result = humanizeDuration(result, {
             units: [DEFAULT_TO],
@@ -227,3 +230,17 @@ function ArabicNumberTimeParser(number, option) {
 }
 
 exports.ArabicNumberTimeParser = ArabicNumberTimeParser;
+
+/***
+ * Func 5: Output the version
+ */
+
+/**
+ * output the version
+ * @returns {String} the current version 
+ */
+function version() {
+    return require("../package.json").version;
+}
+
+exports.version = version;

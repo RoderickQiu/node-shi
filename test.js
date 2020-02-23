@@ -16,4 +16,7 @@ console.log(shi.unitConverter(1, "d", "ms"));//86400000
 // time in Arabic number -> human time
 console.log(shi.ArabicNumberTimeParser(1500));//25 minutes
 console.log(shi.ArabicNumberTimeParser(36, { lang: 'fr', to: 'h' }));//0,01 heure
-console.log(shi.ArabicNumberTimeParser(1, { lang: 'zh_CN', as: 'h', to: 'ms' }));//3600000 毫秒
+console.log(shi.ArabicNumberTimeParser(1, { lang: 'zh_CN', as: 'ms', to: 's', round: true }));//0 秒
+
+// output the version
+console.log(shi.version());//0.3.1
