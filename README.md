@@ -2,7 +2,17 @@
 
 It's a lib which let you to transfer human time to computer-readable time and also to transfer computer-generated time to human time, available for English and Chinese.
 
+[**NPM Package**](https://www.npmjs.com/package/node-shi) | [**CNPM**](https://npm.taobao.org/package/node-shi)
+
 ## How to use
+
+```shell
+# npm
+npm i node-shi
+
+# yarn
+npm add node-shi
+```
 
 ```javascript
 var shi = require('node-shi');
