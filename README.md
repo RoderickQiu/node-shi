@@ -11,7 +11,7 @@ It's a lib which let you to transfer human time to computer-readable time and al
 npm i node-shi
 
 # yarn
-npm add node-shi
+yarn add node-shi
 ```
 
 ```javascript
