@@ -138,7 +138,7 @@ function unitConverterAfter(str, to) {
 /**
  * human time (中文/English) parsed to Arabic number in seconds.
  * @param {String|Number} str The string need to be parsed or the time in different unixes.
- * @param {Object} option (optional) *{ as (only used when no unix is in str): (d, h, m (min), s, ms), to: (d, h, m (min), s, ms) }*
+ * @param {Object} option (optional) *{ ignoreError: boolean, as (only used when no unix is in str): (d, h, m (min), s, ms), to: (d, h, m (min), s, ms) }*
  * @returns {Number} The converted number
  */
 function humanTimeParser(str, option) {
@@ -166,7 +166,10 @@ function humanTimeParser(str, option) {
             } else return timestring(str);
         }
         catch (e) {
-            throw e;
+            if (option) {
+                if (option.ignoreError != true)
+                    throw e;
+            } else throw e;
         }
     }
 }
@@ -190,7 +193,7 @@ exports.humanTimeParser = humanTimeParser;
  *'ru', 'uk', 'ur', 'sk',    'sv',
  *'tr', 'th', 'vi', 'zh_CN', 'zh_TW'
  * @param {Number} number the time in Arabic number (If `as` is not defined in `option`, we'll parse the number as second in default.)
- * @param {Object} option (optional) *{ lang: language, round: boolean (round the decimal or not), as: (d, h, m (min), s, ms), to: (d, h, m (min), s, ms) }*
+ * @param {Object} option (optional) *{ ignoreError: boolean, lang: language, round: boolean (round the decimal or not), as: (d, h, m (min), s, ms), to: (d, h, m (min), s, ms) }*
  */
 function ArabicNumberTimeParser(number, option) {
     try {
@@ -225,7 +228,10 @@ function ArabicNumberTimeParser(number, option) {
         return result;
     }
     catch (e) {
-        throw e;
+        if (option) {
+            if (option.ignoreError != true)
+                throw e;
+        } else throw e;
     }
 }
 
