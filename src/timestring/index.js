@@ -2,6 +2,7 @@
  * By: Michael Barrett
  * Package: timestring
  * Edited by: Roderick Qiu
+ * Parent version: 6.0.0
  */
 
 /**
@@ -44,29 +45,29 @@ const UNIT_MAP = {
 /**
  * Parse a timestring
  *
- * @param  {String} string
- * @param  {String} returnUnit
- * @param  {Object} opts
- * @return {Number}
+ * @param   {string} string
+ * @param   {string} returnUnit
+ * @param   {Object} opts
+ * @returns {number}
  */
 
 function parseTimestring(string, returnUnit, opts) {
   opts = Object.assign({}, DEFAULT_OPTS, opts || {})
 
   let totalSeconds = 0
-  let unitValues = getUnitValues(opts)
-  let groups = string
+  const unitValues = getUnitValues(opts)
+  const groups = string
     .toLowerCase()
     .replace(/[^.\w+-]+/g, '')
     .match(/[-+]?[0-9.]+[a-z]+/g)
 
   if (groups === null) {
-    throw new Error(`The string [${string}] could not be parsed`)
+    throw new Error(`The string [${string}] could not be parsed by timestring`)
   }
 
   groups.forEach(group => {
-    let value = group.match(/[0-9.]+/g)[0]
-    let unit = group.match(/[a-z]+/g)[0]
+    const value = group.match(/[0-9.]+/g)[0]
+    const unit = group.match(/[a-z]+/g)[0]
 
     totalSeconds += getSeconds(value, unit, unitValues)
   })
@@ -86,7 +87,7 @@ function parseTimestring(string, returnUnit, opts) {
  */
 
 function getUnitValues(opts) {
-  let unitValues = {
+  const unitValues = {
     ms: 0.001,
     s: 1,
     m: 60,
@@ -104,27 +105,27 @@ function getUnitValues(opts) {
 /**
  * Get the key for a unit
  *
- * @param   {String} unit
- * @returns {String}
+ * @param   {string} unit
+ * @returns {string}
  */
 
 function getUnitKey(unit) {
-  for (let key of Object.keys(UNIT_MAP)) {
+  for (const key of Object.keys(UNIT_MAP)) {
     if (UNIT_MAP[key].indexOf(unit) > -1) {
       return key
     }
   }
 
-  throw new Error(`The unit [${unit}] is not supported`)
+  throw new Error(`The unit [${unit}] is not supported by timestring`)
 }
 
 /**
  *  Get the number of seconds for a value, based on the unit
  *
- * @param   {Number} value
- * @param   {String} unit
+ * @param   {number} value
+ * @param   {string} unit
  * @param   {Object} unitValues
- * @returns {Number}
+ * @returns {number}
  */
 
 function getSeconds(value, unit, unitValues) {
@@ -134,10 +135,10 @@ function getSeconds(value, unit, unitValues) {
 /**
  * Convert a value from its existing unit to a new unit
  *
- * @param   {Number} value
- * @param   {String} unit
+ * @param   {number} value
+ * @param   {string} unit
  * @param   {Object} unitValues
- * @returns {Number}
+ * @returns {number}
  */
 
 function convert(value, unit, unitValues) {

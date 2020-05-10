@@ -38,7 +38,7 @@ console.log(shi.ArabicNumberTimeParser(1, { lang: 'zh_CN', as: 'ms', to: 's', ro
 console.log(shi.ArabicNumberTimeParser(NaN, { ignoreError: true }))//0 seconds (because errors ignored)
 
 // output the version
-console.log(shi.version());//0.4.1
+console.log(shi.version());//0.4.2
 ```
 
 ## Features
@@ -54,7 +54,7 @@ console.log(shi.version());//0.4.1
 
 ### Time in Arabic number -> Human time
 
-- Time with units `d, h, m (min), s, ms` to human time in languages including: `'ar', 'bg', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'et', 'fa', 'fi', 'fo', 'fr', 'hr', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'lo', 'lt', 'lv', 'ms', 'nl', 'no', 'pl', 'pt', 'ro', 'ru', 'uk', 'ur', 'sk', 'sv', 'tr', 'th', 'vi', 'zh_CN', 'zh_TW'`.
+- Time with units `d, h, m (min), s, ms` to human time in languages including: `'ar', 'bg', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'et', 'fa', 'fi', 'fo', 'fr', 'he', 'hr', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'lo', 'lt', 'lv', 'ms', 'nl', 'no', 'pl', 'pt', 'ro', 'ru', 'uk', 'ur', 'sk', 'sv', 'tr', 'th', 'vi', 'zh_CN', 'zh_TW'`.
 
 ### Time unix translate
 

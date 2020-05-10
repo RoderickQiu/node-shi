@@ -187,11 +187,12 @@ exports.humanTimeParser = humanTimeParser;
  *'ar', 'bg', 'ca', 'cs',    'da',
  *'de', 'el', 'en', 'es',    'et',
  *'fa', 'fi', 'fo', 'fr',    'hr',
- *'hu', 'id', 'is', 'it',    'ja',
- *'ko', 'lo', 'lt', 'lv',    'ms',
- *'nl', 'no', 'pl', 'pt',    'ro',
- *'ru', 'uk', 'ur', 'sk',    'sv',
- *'tr', 'th', 'vi', 'zh_CN', 'zh_TW'
+ *'he', 'hu', 'id', 'is',    'it',    
+ *'ja', 'ko', 'lo', 'lt',    'lv',
+ *'ms', 'nl', 'no', 'pl',    'pt',
+ *'ro', 'ru', 'uk', 'ur',    'sk',
+ *'sv', 'tr', 'th', 'vi', 'zh_CN', 
+ *'zh_TW'
  * @param {Number} number the time in Arabic number (If `as` is not defined in `option`, we'll parse the number as second in default.)
  * @param {Object} option (optional) *{ ignoreError: boolean, lang: language, round: boolean (round the decimal or not), as: (d, h, m (min), s, ms), to: (d, h, m (min), s, ms) }*
  */

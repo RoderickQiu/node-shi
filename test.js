@@ -21,4 +21,4 @@ console.log(shi.ArabicNumberTimeParser(1, { lang: 'zh_CN', as: 'ms', to: 's', ro
 console.log(shi.ArabicNumberTimeParser(NaN, { ignoreError: true }))//0 seconds (because errors ignored)
 
 // output the version
-console.log(shi.version());//0.4.1
+console.log(shi.version());//0.4.2
